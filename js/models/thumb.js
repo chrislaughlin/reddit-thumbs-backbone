@@ -1,3 +1,12 @@
-/**
- * Created by chris on 04/03/15.
- */
+var app = app || {};
+(function() {
+    'use strict';
+    app.Thumb = Backbone.Model.extend({
+        defaults: {
+            name: '',
+            thumbnail: ''
+        }
+    })
+})();
+
+

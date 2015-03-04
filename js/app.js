@@ -1,3 +1,6 @@
-/**
- * Created by chris on 04/03/15.
- */
+$(function () {
+    'use strict';
+
+    // kick things off by creating the `App`
+    new app.AppView();
+});
