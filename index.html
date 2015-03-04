@@ -12,15 +12,21 @@
 <body>
 <section id="appView" class="container">
     <!-- header -->
-    <div>
-        <h1>Reddit Thumbs</h1>
-    </div>
+    <div class="jumbotron">
+        <div>
+            <h1>Reddit Thumbs</h1>
+        </div>
 
-    <!-- sub reddit input -->
-    <div>
-        <label for="subreddit">Sub Reddit Name:</label>
-        <input id="subreddit" type="text" placeholder="Sub Reddit"/>
-        <button id="submitSubReddit" class="btn btn-success">GO</button>
+        <!-- sub reddit input -->
+        <div>
+            <label for="subreddit">Sub Reddit Name:</label>
+            <input id="subreddit" type="text" placeholder="Sub Reddit"/>
+            <button id="submitSubReddit" class="btn btn-success btn-sm">GO</button>
+        </div>
+        <p>
+            Enter the name of a sub reddit and see the top 100 thumbnails. Click on the thumbnail to see more information.
+            <span class="small">e.g. "funny"</span>
+        </p>
     </div>
 
     <!-- loading spinner -->
