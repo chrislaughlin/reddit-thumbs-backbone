@@ -17,7 +17,12 @@ var app = app || {};
                 .success(this.addThumbs.bind(this));
         },
         addThumbs: function(data) {
-            this.thumbs = Array.prototype.map.call(data.data.children, function(child) {
+            var filteredChildren = data.data.children.filter(function(child) {
+                return child.data.thumbnail != 'self' &&
+                    child.data.thumbnail != 'nsfw' &&
+                    child.data.thumbnail != 'default';
+            });
+            this.thumbs = filteredChildren.map(function(child) {
                 return new app.Thumb({
                     name: child.data.title,
                     thumbnail: child.data.thumbnail
