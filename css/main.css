@@ -48,3 +48,7 @@
         column-count:         1;
     }
 }
+
+.errorMessage {
+    margin-top: 20px;
+}
