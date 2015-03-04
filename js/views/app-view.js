@@ -10,9 +10,12 @@ var app = app || {};
             this.thumbs = [];
             this.$grid = $('#photos');
             this.$subRedditInput = $('#subreddit');
+            this.$spinner = $('.spinner');
+            this.$spinner.hide();
         },
         getThumbs: function() {
             this.$grid.html('');
+            this.$spinner.show();
             $.get('https://www.reddit.com/r/'+this.$subRedditInput.val().trim()+'.json?limit=100')
                 .success(this.addThumbs.bind(this));
         },
@@ -29,6 +32,7 @@ var app = app || {};
                 });
             });
             this.thumbs.forEach(this.addOneThumb, this);
+            this.$spinner.hide();
         },
         addOneThumb: function(thumb) {
             var view = new app.ThumbView({ model: thumb});
