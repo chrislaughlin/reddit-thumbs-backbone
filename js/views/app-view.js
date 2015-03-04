@@ -31,7 +31,11 @@ var app = app || {};
             });
             this.thumbs = filteredChildren.map(function(child) {
                 return new app.Thumb({
-                    name: child.data.title,
+                    title: child.data.title,
+                    author: child.data.author,
+                    score: child.data.score,
+                    permalink: 'http://reddit.com/' + child.data.permalink,
+                    num_comments: child.data.num_comments,
                     thumbnail: child.data.thumbnail
                 });
             });

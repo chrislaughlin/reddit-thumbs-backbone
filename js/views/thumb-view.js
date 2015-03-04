@@ -4,10 +4,14 @@ var app = app || {};
     app.ThumbView = Backbone.View.extend({
         template: _.template($('#thumb-template').html()),
         events: {
-            'click .thumbnail' : 'displayName'
+            'click .thumbnail' : 'displayDetails'
         },
-        displayName: function() {
-            alert(this.model.get('name'));
+        displayDetails: function() {
+            new Backbone.BootstrapModal({
+                title: this.model.get('title'),
+                animate: true,
+                content: new app.ModalContentView({model: this.model})
+            }).open();
         },
         render: function() {
             this.$el.html(this.template(this.model.attributes));

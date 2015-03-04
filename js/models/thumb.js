@@ -3,7 +3,11 @@ var app = app || {};
     'use strict';
     app.Thumb = Backbone.Model.extend({
         defaults: {
-            name: '',
+            title: '',
+            author: '',
+            score: 0,
+            permalink: '',
+            num_comments: 0,
             thumbnail: ''
         }
     })

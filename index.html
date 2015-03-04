@@ -40,11 +40,20 @@
 <script type="text/template" id="thumb-template">
     <img class="thumbnail" src="<%= thumbnail%>"/>
 </script>
+<script type="text/template" id="model-content-template">
+    <p>Author: <%= author%></p>
+    <p>Score: <%= score%></p>
+    <p>Comments: <%= num_comments%></p>
+    <p><a href="<%= permalink%>" target="_blank">link</a></p>
+</script>
 <script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="node_modules/underscore/underscore.js"></script>
 <script src="node_modules/backbone/backbone.js"></script>
+<script src="js/backbone.bootstrap-modal.js"></script>
 <script src="js/models/thumb.js"></script>
 <script src="js/collections/thumbs.js"></script>
+<script src="js/views/modal-content-view.js"></script>
 <script src="js/views/thumb-view.js"></script>
 <script src="js/views/app-view.js"></script>
 <script src="js/app.js"></script>
