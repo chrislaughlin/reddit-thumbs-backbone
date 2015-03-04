@@ -2,7 +2,6 @@ var app = app || {};
 (function ($) {
     'use strict';
     app.ThumbView = Backbone.View.extend({
-        tagName: 'div',
         template: _.template($('#thumb-template').html()),
         events: {
             'click .thumbnail' : 'displayName'
