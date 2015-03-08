@@ -1,67 +1,167 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <link rel="stylesheet" type="text/css" href="css/main.css"/>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css.map">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.css.map">
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Redit Thumbs</title>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/freelancer.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
-<body>
-<section id="appView" class="container">
-    <!-- header -->
-    <div class="jumbotron">
-        <div>
-            <h1>Reddit Thumbs</h1>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <a class="navbar-brand" href="#page-top">Reddit Thumbs</a>
+            </div>
         </div>
+        <!-- /.container-fluid -->
+    </nav>
 
-        <!-- sub reddit input -->
-        <div>
-            <label for="subreddit">Sub Reddit Name:</label>
-            <input id="subreddit" type="text" placeholder="Sub Reddit"/>
-            <button id="submitSubReddit" class="btn btn-success btn-sm">GO</button>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-text">
+                        <span class="name">Reddit Thumbs</span>
+                        <hr class="star-light">
+                        <span class="skills">Enter the name of a sub reddit and see the top 100 thumbnails. Click on
+                            the thumbnail to see more information. e.g. "funny"</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <p>
-            Enter the name of a sub reddit and see the top 100 thumbnails. Click on the thumbnail to see more information.
-            <span class="small">e.g. "funny"</span>
-        </p>
+    </header>
+
+    <!-- Search Section -->
+    <section id="portfolio">
+        <div id="appView" class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Search</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <label for="subreddit">Sub Reddit Name:</label>
+                    <input id="subreddit" type="text" placeholder="Sub Reddit"/>
+                    <button id="submitSubReddit" class="btn btn-success btn-sm">GO</button>
+                </div>
+                <!-- loading spinner -->
+                <div class="col-lg-4 col-lg-offset-5 spinner">
+                    <h3>Loading <i class="glyphicon glyphicon-refresh"></i></h3>
+                </div>
+                <div class="col-lg-4 col-lg-offset-5 errorMessage">
+                    <span class="alert alert-danger" role="alert">Unable to get any thumbnails for that sub reddit</span>
+                </div>
+                <!-- grid of images -->
+                <div class="col-lg-4 col-lg-offset-2">
+                    <section id="photos">
+
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Around the Web</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="http://github.com/chrislaughlin"
+                                   target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+                            <li>
+                                <a href="http://twitter.com/chrislaughlin"
+                                   target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; <a href="http://chrislaughlin.github.io" target="_blank">Chris Laughlin 2015</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visble-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
     </div>
 
-    <!-- loading spinner -->
-    <div class="spinner">
-        <h3>Loading <i class="glyphicon glyphicon-refresh"></i></h3>
-    </div>
-    <div class="errorMessage">
-        <span class="alert alert-danger" role="alert">Unable to get any thumbnails for that sub reddit</span>
-    </div>
-    <!-- grid of images -->
-    <div>
-        <section id="photos">
+    <script type="text/template" id="thumb-template">
+        <img class="thumbnail" src="<%= thumbnail%>"/>
+    </script>
+    <script type="text/template" id="model-content-template">
+        <p>Author: <%= author%></p>
+        <p>Score: <%= score%></p>
+        <p>Comments: <%= num_comments%></p>
+        <p><a href="<%= permalink%>" target="_blank">link</a></p>
+    </script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/underscore/underscore.js"></script>
+    <script src="node_modules/backbone/backbone.js"></script>
+    <script src="js/backbone.bootstrap-modal.js"></script>
+    <script src="js/models/thumb.js"></script>
+    <script src="js/collections/thumbs.js"></script>
+    <script src="js/views/modal-content-view.js"></script>
+    <script src="js/views/thumb-view.js"></script>
+    <script src="js/views/app-view.js"></script>
+    <script src="js/app.js"></script>
 
-        </section>
-    </div>
-</section>
-<script type="text/template" id="thumb-template">
-    <img class="thumbnail" src="<%= thumbnail%>"/>
-</script>
-<script type="text/template" id="model-content-template">
-    <p>Author: <%= author%></p>
-    <p>Score: <%= score%></p>
-    <p>Comments: <%= num_comments%></p>
-    <p><a href="<%= permalink%>" target="_blank">link</a></p>
-</script>
-<script src="node_modules/jquery/dist/jquery.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="node_modules/underscore/underscore.js"></script>
-<script src="node_modules/backbone/backbone.js"></script>
-<script src="js/backbone.bootstrap-modal.js"></script>
-<script src="js/models/thumb.js"></script>
-<script src="js/collections/thumbs.js"></script>
-<script src="js/views/modal-content-view.js"></script>
-<script src="js/views/thumb-view.js"></script>
-<script src="js/views/app-view.js"></script>
-<script src="js/app.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/freelancer.js"></script>
+
 </body>
+
 </html>
